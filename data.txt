@@ -1,4 +1,4 @@
-subject ROI    y     x
+subject ROI y x
 HMN001 RPCC 0.3457 17.76
 HMN002 RPCC 0.5166 17.05
 HMN003 RPCC 0.0919 15.81
