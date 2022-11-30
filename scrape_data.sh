@@ -11,7 +11,7 @@ then
   --include "task-stopsignal_acq-seq_events.json" \
   --include "task-stopsignal_acq-seq_bold.json" \
   --include "derivatives/fmriprep/sub-0001/func/*stopsignal_acq-seq_space-MNI152NLin2009cAsym*" \
-  --include "derivatives/fmriprep/sub-0001/func/*restingstate_acq-seq_desc-confounds_regressors*" \
+  --include "derivatives/fmriprep/sub-0001/func/*stopsignal_acq-seq_desc-confounds_regressors*" \
   --include "sub-0001/func/*task-stopsignal_acq-seq_events.tsv"
 elif [[ $option == "all" ]]
 then
@@ -21,7 +21,7 @@ then
   --include "task-stopsignal_acq-seq_events.json" \
   --include "task-stopsignal_acq-seq_bold.json" \
   --include "derivatives/fmriprep/*/func/*stopsignal_acq-seq_space-MNI152NLin2009cAsym*" \
-  --include "derivatives/fmriprep/*/func/*restingstate_acq-seq_desc-confounds_regressors*" \
+  --include "derivatives/fmriprep/*/func/*stopsignal_acq-seq_desc-confounds_regressors*" \
   --include "*/func/*task-stopsignal_acq-seq_events.tsv"
 else
   echo usage: \'bash scrape_data.sh [single,all]\'
