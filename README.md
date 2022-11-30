@@ -1,6 +1,6 @@
 # pyrba
 Python implementation of hierarchical Baysian modelling of fMRI data
-
+This is a fork. Original can be found at https://github.com/cmolan/pyrba
 ## Installation
 
 Install Anaconda / Miniconda and create a new conda environment with:
