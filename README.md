@@ -6,9 +6,5 @@ Python implementation of hierarchical Baysian modelling of fMRI data
 Install Anaconda / Miniconda and create a new conda environment with:
 
 ```bash
-conda create -n pyrba -c conda-forge ipywidgets jupyter matplotlib seaborn pymc numpyro ipykernel arviz formulae python-graphviz
-conda activate pyrba
-pip install --no-deps git+https://github.com/bambinos/bambi.git@425b7b88f01f093ed131433d8559bcc6e6d23bf8
+$ conda env create -n pyrba --file environment.yml
 ```
-
-The specific bambi version is currently required for a bugfix when using numpyro.
