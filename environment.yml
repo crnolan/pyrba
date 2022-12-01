@@ -96,7 +96,7 @@ dependencies:
   - idna=3.4=pyhd8ed1ab_0
   - importlib-metadata=5.1.0=pyha770c72_0
   - importlib_resources=5.10.0=pyhd8ed1ab_0
-  - ipykernel=6.18.2=pyh210e3f2_0
+  - ipykernel=6.17.1=pyh210e3f2_0
   - ipython=8.6.0=pyh41d4057_1
   - ipython_genutils=0.2.0=py_1
   - ipywidgets=8.0.2=pyhd8ed1ab_1
