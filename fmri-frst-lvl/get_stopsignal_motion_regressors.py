@@ -9,7 +9,7 @@ import pandas as pd
 
 # %%
 # define functions
-def list_files(data_dir, subject_number, session_number, runs, task):
+def list_files(data_dir, subject_number):
     """create a list of regressor filenames for given subject
     Dependencies: assumes data is in BIDS format
 
@@ -23,8 +23,8 @@ def list_files(data_dir, subject_number, session_number, runs, task):
     Returns:
         regressor_files (list of strings): a cell/list of len(run) containing the regressor filenames for that participant
     """
-    tmplt = ''.join([data_dir, 'sub-{0}/ses-{1}/func/sub-{0}_ses-{1}_task-{2}_run-{3}_acq-seq_desc-confounds_regressors.tsv'])
-    return [tmplt.format(sub, sess, t, run) for sub in subject_number for sess in session_number for t in task for run in runs]
+    tmplt = ''.join([data_dir, 'sub-{0}/func/sub-{0}_task-stopsignal_acq-seq_desc-confounds_regressors.tsv'])
+    return [tmplt.format(sub) for sub in subject_number]
 
 
 def print_new_json(fname, data): # function to print json file, given fname (str) and data = {}
@@ -79,40 +79,10 @@ def print_motion_regressors_for_spm(confounds_fname):
 # %%
 # first define settings for list files
 data_dir = '../data/test-subject/derivatives/fmriprep/' 
-subs = ['0001']
-task = ['stopsignal']
-sess = ['01']
-
-# %%
-# get files and rename them
-fstr = ''.join([data_dir, 
-               'sub-{0}/func/sub-{0}_task-{1}_acq-seq_desc-confounds_regressors.tsv'])
-
-# %%
-# expand to get the filelist for subjet numbers
-fns = [fstr.format(subnum, t) for subnum in subs for t in task]
-
-# %%
-# first make the folder that you expect to exist
-dir_names = ''.join(['../data/test-subject/derivatives/fmriprep/', 
-                     'sub-{0}/ses-01/func'])
-dir_str =  [dir_names.format(subnum) for subnum in subs]
-os.system('mkdir -p ' + dir_str[0])
-
-# %%
-# move old data to new location
-nu = ''.join([data_dir,
-              'sub-{0}/ses-{1}/func/sub-{0}_ses-{1}_task-{2}_run-1_acq-seq_desc-confounds_regressors.tsv'])
-nufs = [nu.format(subnum, s, t)  for subnum in subs for s in sess for t in task]  
-os.system('rsync ' + fns[0] + ' ' + nufs[0])          
 
 # %%
 subject_number = ['0001']
-session_number = ['01'] # this assumes data is in BIDS
-runs = [1]
-task = ['stopsignal']
-
-fnms = list_files(data_dir, subject_number, session_number, runs, task)
+fnms = list_files(data_dir, subject_number)
 
 # %%
 # now print out the movement regressor columns into a txt file ready for use in spm
