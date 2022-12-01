@@ -29,6 +29,7 @@ After creating a new [notebook session](https://docs.oracle.com/en-us/iaas/data-
 1. clone this repository in the session:
     1. click on the git icon on the left sidebar
     1. clone a repository, and copy in the repository url: `https://github.com/crnolan/pyrba.git`
+    2. alternatively: fork the repository into your own github account first, and then clone your fork (this will make contributions easier via pull requests)
 1. create a new conda environment:
     1. from the launcher, open a new terminal
     2. cd pyrba/
