@@ -31,6 +31,7 @@ After creating a new [notebook session](https://docs.oracle.com/en-us/iaas/data-
     1. clone a repository, and copy in the repository url: `https://github.com/crnolan/pyrba.git`
 1. create a new conda environment:
     1. from the launcher, open a new terminal
+    2. cd pyrba/
     1. create a conda environment from the `environment.yml` file:
         ```bash
         $ conda env create -n pyrba --file environment.yml
