@@ -3,8 +3,8 @@ Python implementation of hierarchical Bayesian modelling of fMRI data
 
 # Authors & Contributors
 This project would be nothing without:
-Gang Chen
-Kelly Garner
+Gang Chen  
+Kelly Garner  
 Christopher Nolan
 Lea Waller
 Darin Erat Sleiter
