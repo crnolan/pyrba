@@ -56,3 +56,21 @@ After creating a new [notebook session](https://docs.oracle.com/en-us/iaas/data-
 1. create a new notebook or open an existing one, and select the kernel labeled: `[conda env:.conda-pyrba]`
     1. you might need to give the instance a moment to recognize the new kernel after the previous environment creation step
 
+### Notes on contents of this repo added during Brainhack 2022 Sydney:
+
+* Python notebooks (xx.ipynb) = examples of fitting hierarchical Bayesian modelling of fMRI (and fMRI-like) data.
+
+* generate_random_voxels.py - build a quick simulation to test of your compute but generating some random data for a set of 'voxels' in small scale before going on to real fMRI data.
+
+* neurosyth_masks.sh - this script will pull down custom ROI masks based on neurosynth.org/ meta-analysis of interest.
+
+* scrape_data.sh - script to pull down open source dataset to play with from the Amsterdam Open MRI Collection https://openneuro.org/datasets/ds002790/versions/2.0.0  please see preprint for details of this data https://www.biorxiv.org/content/10.1101/2020.06.16.155317v1
+
+* fmri-frst-lvl/ - simple first-level GLM of the AOMRIC data pulled down by scrape_data.sh
+    ** GLM batch scripted in SPM12 Matlab - sorry not sorry ;) 
+## to use this pipeline for the AOMRIC data:
+1. scrape_data.sh, then
+2. fmri-frst-level/get_stopsignal_motion_regressors.py - simplified regressor extraction
+3. fmri-frst-level/eventreader_onsets.m
+4. fmri-frst-level/glm_1stlevel_stopsignal.m (this calls glm_build_batch_jobs.m)
+
